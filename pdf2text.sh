@@ -1,5 +1,8 @@
 #! /bin/sh
+
 # Convert pdf to text
+# Usage: pdf2text.sh <pdf file> <text file>
+
 FOLDER=$(echo $1| cut -d'.' -f 1| cut -d'/' -f 5)
 if [ -d /tmp/$FOLDER ]
 then
