@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Backup selected folders and files to External Media
 start=`date +%s`
 
 folders=('Projects'

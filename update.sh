@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Usage: update.sh <app-name>
+
 if [[ "$1" == "zoom" ]] 
 then
 	echo "updating ${1} ..."
