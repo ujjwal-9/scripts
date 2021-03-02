@@ -16,4 +16,10 @@ then
 	rm ~/Downloads/nteract*
 	gh release download --pattern '*.deb' --repo https://github.com/nteract/nteract/
 	sudo dpkg -i ~/Downloads/nteract*.deb
+elif [[ "$1" == "gcmcore" ]]
+then
+	cd ~/Downloads; 
+	rm ~/Downloads/gcmcore-linux_amd64*
+	gh release download --pattern '*.deb' --repo https://github.com/microsoft/Git-Credential-Manager-Core
+	sudo dpkg -i ~/Downloads/gcmcore-linux_amd64*.deb
 fi
