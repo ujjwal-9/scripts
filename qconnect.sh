@@ -12,7 +12,7 @@ qure11=192.168.1.21
 
 
 
-if [[ $1 ]] && [ $1 -eq $1 2>/dev/null ]:
+if [[ $1 ]] && [ $1 -eq $1 2>/dev/null ]
 then
   server_ip="192.168.1.$1"
   echo "Server IP: $server_ip"
