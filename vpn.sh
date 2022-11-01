@@ -3,6 +3,15 @@
 qure_user=ujjwal.upadhyay
 kaust_user=upadhyu
 
+if [ -z "$2" ]
+then
+      echo "user: $qure_user"
+else
+      qure_user="$2"
+      echo "user: $qure_user"
+fi 
+
+
 if [[ "$1" == "qure" ]]
 then
   if [[ "$2" == "ipa" ]]

@@ -20,12 +20,16 @@ then
 else
   if [[ "$2" == "tunnel" ]]
   then
+    kill -9 $(lsof -t -i:$3)
     tsh ssh -N -L $3:localhost:$3 $qure_user@$1.internal.qure.ai &
     jobs -l
   elif [[ "$2" == "sftp" ]]
   then
     sftp $qure_user@$1.internal.qure.ai
+  elif [[ "$2" == "ext" ]]
+  then
+    tsh ssh $qure_user@$1
   else
-    ssh $qure_user@$1.internal.qure.ai
+    tsh ssh $qure_user@$1.internal.qure.ai
   fi
 fi

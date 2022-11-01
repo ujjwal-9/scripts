@@ -15,7 +15,7 @@ else
     declare -a ip_list=('qure16' 'qure15' 'qure14' 'qure13' 'qure11' 'qure10' 'qure9' 'qure6' 'qure5' 'qure3' 'qure1');
     for i in ${ip_list[@]} ; do
         echo "Server: $i"
-        ssh $qure_user@$i.internal.qure.ai "gpustat -u"
+        ssh $qure_user@$i.internal.qure.ai "ping google.com"
         echo " "
     done
 fi
