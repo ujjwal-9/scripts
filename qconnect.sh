@@ -18,7 +18,12 @@ then
   echo "Server IP: $server_ip"
   ssh -i ~/.ssh/qureipa $qure_user@$server_ip
 else
-  if [[ "$2" == "tunnel" ]]
+  if [[ "$2" == "etunnel" ]]
+  then
+    kill -9 $(lsof -t -i:$3)
+    tsh ssh -N -L $3:localhost:$3 $qure_user@$1.e2e.qure.ai &
+    jobs -l
+  elif [[ "$2" == "tunnel" ]]
   then
     kill -9 $(lsof -t -i:$3)
     tsh ssh -N -L $3:localhost:$3 $qure_user@$1.internal.qure.ai &
@@ -29,6 +34,9 @@ else
   elif [[ "$2" == "ext" ]]
   then
     tsh ssh $qure_user@$1
+  elif [[ "$1" == "e2e" ]]
+  then
+    tsh ssh $qure_user@e2ecloud$2.e2e.qure.ai
   else
     tsh ssh $qure_user@$1.internal.qure.ai
   fi
