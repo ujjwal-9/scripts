@@ -1,4 +1,3 @@
 #!/bin/bash
 
-echo "Active SSH connections:"
-watch -n 1 "sudo lsof -i :22"
+watch -n 1 "lsof -i :22"
